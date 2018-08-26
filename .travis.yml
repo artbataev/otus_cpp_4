@@ -13,6 +13,9 @@ addons:
     - libgtest-dev
     - cmake
 
+before_script:
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 90
+
 script:
 - cmake .
 - cmake --build .
