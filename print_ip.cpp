@@ -31,9 +31,11 @@ int main() {
     std::cout << "list: ";
     print_ip(ip_list);
 
-    auto tuple = std::make_tuple<char, char, char>(122, 123, 124);
-    std::cout << "tuple: ";
-    print_ip(tuple);
+    std::cout << "tuple of char: ";
+    print_ip(std::make_tuple<char, char, char>(122, 123, 124));
+
+    std::cout << "tuple of strings: ";
+    print_ip(std::make_tuple("one"s, "two"s));
 
     return 0;
 }
