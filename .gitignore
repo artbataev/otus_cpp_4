@@ -34,5 +34,4 @@
 *.app
 
 .idea/
-latex/
-html/
+docs/

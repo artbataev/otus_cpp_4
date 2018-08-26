@@ -9,6 +9,9 @@ addons:
     packages:
     - g++-8
     - doxygen
+    - doxygen-doc
+    - doxygen-latex
+    - doxygen-gui
     - graphviz
     - libgtest-dev
     - cmake
@@ -31,9 +34,10 @@ deploy:
     on:
       branch: master
 
-#  - provider: pages
-#    skip-cleanup: true
-#    github-token: $GITHUB_TOKEN
-#    keep-history: true
-#    on:
-#      branch: master
+  - provider: pages
+    skip-cleanup: true
+    github-token: $GITHUB_TOKEN
+    keep-history: true
+    local-dir: html
+    on:
+      branch: master
