@@ -5,7 +5,8 @@
 #include <type_traits>
 #include <tuple>
 
-/*
+
+/**
  * ip2string convertor for integral types (e.g. int, char, etc.)
  */
 template<typename T,
@@ -23,7 +24,8 @@ std::string ip2string(const T& ip) {
     return ss.str();
 }
 
-/*
+
+/**
  * ip2string convertor for iterable containers, e.g. vector, list
  */
 template<typename Container,
@@ -39,13 +41,16 @@ std::string ip2string(const Container& ip) {
     return ss.str();
 }
 
-/*
+
+/**
  * ip2string convertor for string: just returning same string
  */
 std::string ip2string(std::string ip) {
     return ip;
 }
-/*
+
+
+/**
  * helper function for ip2string: recursively parse tuple using indices
  */
 template<size_t Idx, typename... T>
@@ -62,7 +67,7 @@ std::string ip2string(std::tuple<T...> ip) {
     return ss.str();
 }
 
-/*
+/**
  * ip2string convertor for tuple: use parsing from index 0
  */
 template<typename... T>

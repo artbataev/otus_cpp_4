@@ -6,15 +6,15 @@
 
 #include "ip2string.h"
 
-/*
- * Template function print_ip: uses ip2string convertor
+/**
+ * Template function to print ip address: uses ip2string convertor
  */
 template<typename T>
 void print_ip(T ip) {
     std::cout << ip2string(ip) << std::endl;
 }
 
-/*
+/**
  * Main function
  */
 int main() {
