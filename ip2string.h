@@ -35,6 +35,9 @@ std::string ip2string(const Container& ip) {
     return ss.str();
 }
 
+std::string ip2string(std::string ip) {
+    return ip;
+}
 
 template<size_t Idx, typename... T>
 std::string ip2string(std::tuple<T...> ip) {
