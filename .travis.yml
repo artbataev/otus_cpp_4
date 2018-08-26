@@ -17,10 +17,11 @@ before_script:
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 90
 
 script:
-- cmake .
-- cmake --build .
-#- cmake --build . --target test
-- cmake --build . --target package
+  - cmake .
+  - cmake --build .
+  #- cmake --build . --target test
+  - cmake --build . --target package
+  - doxygen Doxyfile
 
 deploy:
   - provider: script
