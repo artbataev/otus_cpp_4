@@ -26,9 +26,9 @@ int main() {
     print_ip(long(8875824491850138409));
 
     std::cout << "string: ";
-    print_ip("abcd"s);
+    print_ip("just-string"s);
 
-    std::vector<char> ip_vector{1, 2, 3, 4, 5, 6};
+    std::vector<char> ip_vector{'v', 'e', 'c', 't', 'o', 'r', 'o', 'f', 'c', 'h', 'a', 'r'};
     std::cout << "vector: ";
     print_ip(ip_vector);
 
@@ -37,10 +37,10 @@ int main() {
     print_ip(ip_list);
 
     std::cout << "tuple of char: ";
-    print_ip(std::make_tuple<char, char, char>(122, 123, 124));
+    print_ip(std::make_tuple<char, char, char>('t', 'u', 'p', 'l', 'e'));
 
     std::cout << "tuple of strings: ";
-    print_ip(std::make_tuple("one"s, "two"s));
+    print_ip(std::make_tuple("tuple"s, "of"s, "strings"s));
 
     return 0;
 }

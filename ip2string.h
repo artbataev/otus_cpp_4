@@ -35,8 +35,8 @@ std::string ip2string(const Container& ip) {
     std::stringstream ss;
     for (auto item_pointer = ip.cbegin(); item_pointer != ip.cend(); item_pointer++) {
         if (item_pointer != ip.cbegin())
-            ss << "..";
-        ss << ip2string(*item_pointer);
+            ss << ".";
+        ss << *item_pointer;
     }
     return ss.str();
 }
@@ -58,9 +58,9 @@ std::string ip2string(std::tuple<T...> ip) {
     std::stringstream ss;
     std::size_t constexpr tSize = std::tuple_size<std::tuple<T...>>::value;
     if constexpr (Idx > 0) {
-        ss << "..";
+        ss << ".";
     }
-    ss << ip2string(std::get<Idx>(ip));
+    ss << std::get<Idx>(ip);
     if constexpr (Idx + 1 <= tSize - 1) {
         ss << ip2string<Idx + 1, T...>(ip);
     }
