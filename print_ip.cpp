@@ -37,7 +37,7 @@ int main() {
     print_ip(ip_list);
 
     std::cout << "tuple of char: ";
-    print_ip(std::make_tuple<char, char, char>('t', 'u', 'p', 'l', 'e'));
+    print_ip(std::make_tuple('t', 'u', 'p', 'l', 'e', 'o', 'f', 'c', 'h', 'a', 'r'));
 
     std::cout << "tuple of strings: ";
     print_ip(std::make_tuple("tuple"s, "of"s, "strings"s));
