@@ -114,8 +114,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::stringstream ss;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> item_pointer = ip.cbegin(); item_pointer != ip.cend(); item_pointer++) {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">if</span> (item_pointer != ip.cbegin())</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            ss &lt;&lt; <span class="stringliteral">&quot;..&quot;</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        ss &lt;&lt; <a class="code" href="ip2string_8h.html#af2d1635008176d5ec4e86aae34c948b9">ip2string</a>(*item_pointer);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            ss &lt;&lt; <span class="stringliteral">&quot;.&quot;</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        ss &lt;&lt; *item_pointer;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> ss.str();</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
@@ -131,9 +131,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    std::stringstream ss;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::size_t constexpr tSize = std::tuple_size&lt;std::tuple&lt;T...&gt;&gt;::value;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">if</span> constexpr (Idx &gt; 0) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        ss &lt;&lt; <span class="stringliteral">&quot;..&quot;</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        ss &lt;&lt; <span class="stringliteral">&quot;.&quot;</span>;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    ss &lt;&lt; ip2string(std::get&lt;Idx&gt;(ip));</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    ss &lt;&lt; std::get&lt;Idx&gt;(ip);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span> constexpr (Idx + 1 &lt;= tSize - 1) {</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        ss &lt;&lt; <a class="code" href="ip2string_8h.html#af2d1635008176d5ec4e86aae34c948b9">ip2string</a>&lt;Idx + 1, T...&gt;(ip);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
