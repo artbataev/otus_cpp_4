@@ -7,7 +7,7 @@
 #include "ip2string.h"
 
 /**
- * Template function to print ip address: uses ip2string convertor
+ * Template function to print ip address: uses ip2string converter
  */
 template<typename T>
 void print_ip(T ip) {
