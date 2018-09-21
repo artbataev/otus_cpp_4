@@ -1,0 +1,43 @@
+language: cpp
+compiler: gcc
+dist: trusty
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-8
+    - doxygen
+    - doxygen-doc
+    - doxygen-latex
+    - doxygen-gui
+    - graphviz
+    - libgtest-dev
+    - cmake
+
+before_script:
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 90
+
+script:
+  - cmake .
+  - cmake --build .
+  #- cmake --build . --target test
+  - cmake --build . --target package
+  - doxygen Doxyfile
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script:
+    - curl -T print_ip-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -u artbataev:$BINTRAY_API_KEY "https://api.bintray.com/content/artbataev1/Otus_Assignments/Otus_Cpp_4/$TRAVIS_BUILD_NUMBER/print_ip-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;publish=1"
+    on:
+      branch: master
+
+  - provider: pages
+    skip-cleanup: true
+    github-token: $GITHUB_TOKEN
+    keep-history: true
+    local-dir: docs/html
+    on:
+      branch: master
